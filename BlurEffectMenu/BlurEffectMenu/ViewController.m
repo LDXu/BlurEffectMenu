@@ -77,9 +77,14 @@
 }
 
 - (void)blurEffectMenu:(BlurEffectMenu *)menu didTapOnItem:(BlurEffectMenuItem *)item{
-    [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"item.title:%@",item.title);
-    
+    //代理者
+    [self dismissViewControllerAnimated:YES completion:^{
+        ViewController *vc = [[ViewController alloc] init];
+        vc.view.backgroundColor = [UIColor blueColor];
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

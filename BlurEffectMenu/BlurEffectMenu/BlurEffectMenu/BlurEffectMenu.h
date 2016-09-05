@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class BlurEffectMenu,BlurEffectMenuItem;
-
+//协议
 @protocol BlurEffectMenuDelegate <NSObject>
 
 //点击背景dismiss
@@ -18,7 +18,7 @@
 - (void)blurEffectMenu:(BlurEffectMenu *)menu didTapOnItem:(BlurEffectMenuItem *)item;
 
 @end
-
+//模型
 @interface BlurEffectMenuItem : NSObject
 
 @property (nonatomic,copy) NSString *title;//标题
@@ -29,6 +29,7 @@
 
 @property (nonatomic,assign) id<BlurEffectMenuDelegate>delegate;
 @property (nonatomic,copy) NSArray *menuItemArr;
+//copy修饰 新指针
 //初始化
 - (instancetype)initWithMenus:(NSArray *)menus;
 
